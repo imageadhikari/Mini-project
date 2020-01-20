@@ -15,16 +15,19 @@ def merge(arr,start,mid,end):
             arr[k] = R[j]
             j+=1
 
+
 def mergesort(arr,start,end):
+    """
+    Algorithm to sort array of integers in accending order
+    @param arr --- unsorted array
+    @returns --- sorted array
+    """
     if start<end:
         mid = floor((start+end)//2)
         mergesort(arr,start,mid)
         mergesort(arr,mid+1,end)
         merge(arr,start-1,mid,end)
+    
+    return arr
 
-arr=[12,11,13,5,6,7]
-n= len(arr)
 
-mergesort(arr,1,n)
-
-print(arr)
